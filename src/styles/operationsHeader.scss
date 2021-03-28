@@ -1,0 +1,61 @@
+h1,
+h2,
+a,
+div,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.operations-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "operations balance";
+
+  height: 180px;
+  align-content: end;
+  justify-content: space-between;
+  background: #f8f9fb;
+
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.operations {
+  grid-area: operations;
+}
+
+.operations > h1 {
+  font-size: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 20px;
+}
+
+.sub-operations {
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #8d8d8d;
+  font-size: 20px;
+}
+
+.sub-operations li {
+  margin-right: 40px;
+  display: inline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.active-sub-operation {
+  border-bottom: 3px solid #176b0b;
+}
+
+.balance {
+  grid-area: balance;
+  text-align: right;
+}
+
+.balance > h1 {
+  font-size: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

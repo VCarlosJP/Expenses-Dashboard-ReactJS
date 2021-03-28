@@ -1,0 +1,17 @@
+.app-container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: repeat(auto, 3);
+  grid-template-areas:
+    "navbar operations operations"
+    "navbar . ."
+    "navbar . .";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.operations {
+  grid-area: operations;
+}
