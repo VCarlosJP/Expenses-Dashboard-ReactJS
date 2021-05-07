@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/operationsHeader.scss";
 
-function OperationsHeader({operations}, {balance = '0.00'}) {
+function OperationsHeader({ operations }, { balance = "0.00" }) {
   return (
     <div className="operations-container">
       <div className="operations">
