@@ -1,0 +1,25 @@
+.data_container{
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 25vw;
+    color: #7e7e7e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    justify-content: space-evenly;
+    padding: 20px 0 20px 0;
+    border-top: 1px solid #7e7e7e;
+}
+
+.category_tag{
+    background: #FFD2D2;
+    color: #FF0000;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 4px 30px 4px 30px;
+}
+
+div > b {
+    color: black;
+}
+
+
