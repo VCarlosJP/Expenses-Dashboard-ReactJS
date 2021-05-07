@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons'
 
 function MainNav(){
-    console.log(styles);
     return(
         <div className='main-nav-container'>
             <FontAwesomeIcon className='icon' icon={faFileInvoiceDollar} size="1x"/>

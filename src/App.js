@@ -15,7 +15,7 @@ function App() {
           <MainNav />
         </div>
         <div className="operations">
-          <OperationsHeader />
+          <OperationsHeader operations balance={240} />
         </div>
       </BrowserRouter>
     </div>

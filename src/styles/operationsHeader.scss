@@ -13,7 +13,7 @@ li {
   grid-template-columns: auto auto;
   grid-template-areas: "operations balance";
 
-  height: 180px;
+  height: 150px;
   align-content: end;
   justify-content: space-between;
   background: #f8f9fb;
@@ -27,7 +27,7 @@ li {
 }
 
 .operations > h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 20px;
 }
@@ -42,7 +42,7 @@ li {
 .sub-operations li {
   margin-right: 40px;
   display: inline;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -56,6 +56,6 @@ li {
 }
 
 .balance > h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

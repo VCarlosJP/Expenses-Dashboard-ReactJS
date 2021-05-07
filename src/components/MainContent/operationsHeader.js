@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/operationsHeader.scss";
 
-function OperationsHeader(operation, subOperations, balance) {
+function OperationsHeader({operations}, {balance = '0.00'}) {
   return (
     <div className="operations-container">
       <div className="operations">
@@ -18,7 +18,7 @@ function OperationsHeader(operation, subOperations, balance) {
         </div>
       </div>
       <div className="balance">
-        <h1>€1,024.00</h1>
+        <h1>€{balance}</h1>
         <h2>Current Balance</h2>
       </div>
     </div>
