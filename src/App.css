@@ -15,3 +15,9 @@
   margin-left: 2vw;
   margin-right: 10vw;
 }
+
+.transactions_container{
+  margin-top: 40px;
+  max-height: 40%;
+  overflow-y: scroll;
+}

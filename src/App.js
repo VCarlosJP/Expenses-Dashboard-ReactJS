@@ -9,7 +9,18 @@ import OperationsHeader from "./components/MainContent/operationsHeader";
 import InputElement from "./components/MainContent/inputElement";
 import SelectElement from "./components/MainContent/selectElement";
 
+import TransactionItem from "./components/transactionItem";
+
 import styles from "./styles/app.scss";
+
+const transactions = [
+  {
+    description: "Pago alquiler de piso",
+    amount: 230.0,
+    date: "05/07/2020",
+    category: "BILLS",
+  },
+];
 
 function App() {
   return (
@@ -30,6 +41,11 @@ function App() {
               <SelectElement selectName="Month"></SelectElement>
               <SelectElement selectName="Year"></SelectElement>
             </div>
+          </div>
+          <div className="transactions_container">
+            {transactions.map((transaction, index) => {
+              return <TransactionItem key={index} transaction={transaction} />;
+            })}
           </div>
         </div>
       </BrowserRouter>
