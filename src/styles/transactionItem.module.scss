@@ -10,12 +10,22 @@
     border-top: 1px solid #7e7e7e;
 }
 
-.category_tag{
-    background: #FFD2D2;
-    color: #FF0000;
+@mixin category_tag{
     border-radius: 15px;
     font-size: 12px;
     padding: 4px 30px 4px 30px;
+}
+
+.bill_tag{
+    @include category_tag;
+    background: #FFD2D2;
+    color: #FF0000;
+}
+
+.food_tag{
+    @include category_tag;
+    background: #DAD9FF;
+    color: #0900FF;
 }
 
 div > b {

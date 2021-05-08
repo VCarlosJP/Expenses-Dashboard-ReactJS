@@ -2,7 +2,18 @@ import React from "react";
 
 import styles from "../styles/transactionItem.module.scss";
 
+const getTagStyleColor = (category) => {
+  switch (category) {
+    case "BILLS":
+      return styles.bill_tag;
+    case "EXPENSES":
+      return styles.expenses_tag;
+  }
+};
+
 const transactionItem = ({ transaction }) => {
+  let tagColor = getTagStyleColor(transaction.category);
+
   return (
     <div className={styles.data_container}>
       <div>{transaction.description}</div>
@@ -14,7 +25,7 @@ const transactionItem = ({ transaction }) => {
         {transaction.date}
       </div>
       <div>
-        <div className={styles.category_tag}>
+        <div className={tagColor}>
           <span>
             <b>{transaction.category}</b>
           </span>
