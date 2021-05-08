@@ -29,23 +29,27 @@ function App() {
         <div className="navbar">
           <MainNav />
         </div>
-        <div className="operations">
+        <div>
           <OperationsHeader operations balance={240} />
           <div className="expenses_container">
-            <form className="form_container">
-              <SelectElement selectName="Category"></SelectElement>
-              <InputElement placeholder={"Add Description..."} />
-              <InputElement placeholder={"Amount"} />
-            </form>
+            <div>
+              <form className="form_container">
+                <SelectElement selectName="Category"></SelectElement>
+                <InputElement placeholder={"Add Description..."} />
+                <InputElement placeholder={"Amount"} />
+              </form>
+              <div className="transactions_container">
+                {transactions.map((transaction, index) => {
+                  return (
+                    <TransactionItem key={index} transaction={transaction} />
+                  );
+                })}
+              </div>
+            </div>
             <div className="filters_container">
               <SelectElement selectName="Month"></SelectElement>
               <SelectElement selectName="Year"></SelectElement>
             </div>
-          </div>
-          <div className="transactions_container">
-            {transactions.map((transaction, index) => {
-              return <TransactionItem key={index} transaction={transaction} />;
-            })}
           </div>
         </div>
       </BrowserRouter>
