@@ -2,25 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import MainNav from "./components/MainNav/MainNav";
 import OperationsHeader from "./components/MainContent/operationsHeader";
-import InputElement from "./components/MainContent/inputElement";
-import SelectElement from "./components/MainContent/selectElement";
 
-import TransactionItem from "./components/transactionItem";
+import Expenses from "./pages/expenses";
 
 import styles from "./styles/app.scss";
-
-const transactions = [
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-];
 
 function App() {
   return (
@@ -31,26 +20,14 @@ function App() {
         </div>
         <div>
           <OperationsHeader operations balance={240} />
-          <div className="expenses_container">
-            <div>
-              <form className="form_container">
-                <SelectElement selectName="Category"></SelectElement>
-                <InputElement placeholder={"Add Description..."} />
-                <InputElement placeholder={"Amount"} />
-              </form>
-              <div className="transactions_container">
-                {transactions.map((transaction, index) => {
-                  return (
-                    <TransactionItem key={index} transaction={transaction} />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="filters_container">
-              <SelectElement selectName="Month"></SelectElement>
-              <SelectElement selectName="Year"></SelectElement>
-            </div>
-          </div>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/expenses" />
+            </Route>
+            <Route path="/expenses">
+              <Expenses />
+            </Route>
+          </Switch>
         </div>
       </BrowserRouter>
     </div>
