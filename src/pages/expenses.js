@@ -4,7 +4,7 @@ import styles from "../styles/expenses.module.scss";
 
 import InputElement from "../components/MainContent/inputElement";
 import SelectElement from "../components/MainContent/selectElement";
-import TransactionItem from "../components/TransactionItem";
+import TransactionItem from "../components/transactionItem";
 
 import { listAllTransactions } from "../services/transactions";
 

@@ -4,10 +4,10 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import MainNav from "./components/MainNav/MainNav";
+import MainNav from "./components/MainNav/mainNav";
 import OperationsHeader from "./components/MainContent/operationsHeader";
 
-import Expenses from "./pages/Expenses";
+import Expenses from "./pages/expenses";
 import ExpensesChart from "./pages/expensesChart";
 import { ROUTE_EXPENSES_PREFIX, ROUTE_EXPENSES_CHART } from "../src/constants";
 
