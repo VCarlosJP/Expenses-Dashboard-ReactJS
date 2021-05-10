@@ -8,6 +8,10 @@ import MainNav from "./components/MainNav/MainNav";
 import OperationsHeader from "./components/MainContent/operationsHeader";
 
 import Expenses from "./pages/expenses";
+import ExpensesChart from "./pages/expensesChart";
+import { ROUTE_EXPENSES_PREFIX, ROUTE_EXPENSES_CHART } from "../src/constants";
+
+import { EXPENSES_OPTIONS } from "../src/constants";
 
 import styles from "./styles/app.scss";
 
@@ -19,14 +23,14 @@ function App() {
           <MainNav />
         </div>
         <div>
-          <OperationsHeader operations balance={240} />
+          <OperationsHeader operationLinks={EXPENSES_OPTIONS} />
           <Switch>
             <Route exact path="/">
-              <Redirect to="/expenses" />
+              <Redirect to={ROUTE_EXPENSES_PREFIX} />
             </Route>
-            <Route path="/expenses">
-              <Expenses />
-            </Route>
+            <Route exact path={ROUTE_EXPENSES_PREFIX} component={Expenses} />
+            <Route path={ROUTE_EXPENSES_CHART} component={Expenses} />
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </div>
       </BrowserRouter>
