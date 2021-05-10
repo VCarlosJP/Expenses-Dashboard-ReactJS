@@ -1,87 +1,25 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 
 import styles from "../styles/expenses.module.scss";
 
 import InputElement from "../components/MainContent/inputElement";
 import SelectElement from "../components/MainContent/selectElement";
-import TransactionItem from "../components/transactionItem";
+import TransactionItem from "../components/TransactionItem";
 
-const transactions = [
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-  {
-    description: "Pago alquiler de piso",
-    amount: 230.0,
-    date: "05/07/2020",
-    category: "BILLS",
-  },
-  {
-    description: "Cena",
-    amount: 30,
-    date: "05/09/2020",
-    category: "FOOD",
-  },
-];
+import { listAllTransactions } from "../services/transactions";
 
-const expenses = () => {
+const Expenses = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      const data = await listAllTransactions();
+      setTransactions(data);
+    };
+
+    fetchTransactions();
+  }, []);
+
   return (
     <>
       <div className={styles.expenses_container}>
@@ -106,4 +44,4 @@ const expenses = () => {
   );
 };
 
-export default expenses;
+export default Expenses;

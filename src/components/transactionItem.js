@@ -1,6 +1,6 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 
-import styles from "../styles/transactionItem.module.scss";
+import styles from "../styles/TransactionItem.module.scss";
 
 const getTagStyleColor = (category) => {
   switch (category) {
@@ -11,7 +11,7 @@ const getTagStyleColor = (category) => {
   }
 };
 
-const transactionItem = ({ transaction }) => {
+const TransactionItem = ({ transaction }) => {
   let tagColor = getTagStyleColor(transaction.category);
 
   return (
@@ -35,4 +35,4 @@ const transactionItem = ({ transaction }) => {
   );
 };
 
-export default transactionItem;
+export default TransactionItem;
