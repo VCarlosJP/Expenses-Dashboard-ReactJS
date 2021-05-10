@@ -1,24 +1,40 @@
-import React from "react";
+import { React, useState } from "react";
 import styles from "../../styles/operationsHeader.scss";
 
-function OperationsHeader({ operations }, { balance = "0.00" }) {
+import { Link } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+
+function OperationsHeader({ operationLinks }) {
+  const location = useLocation();
+  const { pathname } = location;
+
+  const operationName = operationLinks[0];
+  const operationOptions = operationLinks[1];
+
   return (
     <div className="operations-container">
       <div className="operations">
-        <h1>Expenses</h1>
+        <h1>{operationName}</h1>
         <div className="sub-operations">
           <ul>
-            <li>
-              <a className="active-sub-operation">All Expenses</a>
-            </li>
-            <li>
-              <a>Expenses Chart</a>
-            </li>
+            {operationOptions.map((operation, index) => {
+              return (
+                <li
+                  key={index}
+                  className={
+                    pathname === operation.url ? "active-sub-operation" : ""
+                  }
+                >
+                  <Link to={operation.url}>{operation.title}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
       <div className="balance">
-        <h1>€{balance}</h1>
+        <h1>€</h1>
         <h2>Current Balance</h2>
       </div>
     </div>

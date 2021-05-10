@@ -6,8 +6,8 @@ const getTagStyleColor = (category) => {
   switch (category) {
     case "BILLS":
       return styles.bill_tag;
-    case "EXPENSES":
-      return styles.expenses_tag;
+    case "FOOD":
+      return styles.food_tag;
   }
 };
 
@@ -16,7 +16,7 @@ const transactionItem = ({ transaction }) => {
 
   return (
     <div className={styles.data_container}>
-      <div>{transaction.description}</div>
+      <div className={styles.tao}>{transaction.description}</div>
       <div>
         <b>Amount: </b>€ {transaction.amount}
       </div>
